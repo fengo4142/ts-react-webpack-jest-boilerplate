@@ -73,28 +73,34 @@ $screen-lg-min: 992px;
 // Large tablets and desktops
 $screen-xl-min: 1200px;
 
-// Small devices
+// extra small devices
 @mixin xs {
   @media (max-width: #{$screen-sm-min}) {
     @content;
   }
 }
-// Medium devices
+// small devices
 @mixin sm {
   @media (max-width: #{$screen-md-min}) {
     @content;
   }
 }
-// Large devices
+// medium devices
 @mixin md {
   @media (max-width: #{$screen-lg-min}) {
     @content;
   }
 }
-
-// Extra large devices
+// large devices
 @mixin lg {
   @media (max-width: #{$screen-xl-min}) {
     @content;
   }
+}
+
+// extra large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }  
 }

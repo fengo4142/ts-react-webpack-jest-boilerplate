@@ -13,9 +13,10 @@ export const Salon: FC = () => {
   return (
     <div className={styles.root}>
       <Switch>
-        <Route path={`${path}/list`} component={ListSalon} />
-        <Route path={`${path}/detail`} component={DetailSalon} />
+        <Route exact path={`${path}`} component={ListSalon} />
+        <Route exact path={`${path}/:id`} component={DetailSalon} />
         <Redirect path={`${path}/*`} to={`${path}`} />
+        <Redirect exact from={path} to={`${path}`} />
       </Switch>
     </div>
   );

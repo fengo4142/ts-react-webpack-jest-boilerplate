@@ -1,0 +1,36 @@
+@import "../../../styles/variables";
+
+.header {
+  padding-top: 20px;
+  line-height: 44px;
+  display: flex;
+  background: transparent;
+  position: absolute;
+  width: 100%;
+
+
+  .title {
+    margin: 0 auto;
+    font-size: 22px;
+    color: $dark;
+    letter-spacing: -0.13px;
+  }
+  
+  .control {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    .svg {
+      margin: 0 15px;
+    }
+    .packed {
+      margin: 0 12px;
+    }
+  }
+
+}
+  
+.small {
+  padding-top: 30px;
+}

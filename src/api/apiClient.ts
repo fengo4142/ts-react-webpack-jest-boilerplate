@@ -3,7 +3,6 @@ import { EventEmitter } from 'events';
 import ApiError from './apiError';
 import { HttpInterface } from './httpAdapter';
 import { fromEvent, Observable } from 'rxjs';
-import data from './data.json'
 
 type ApiClientEvents = 'unauthorized' | string;
 
@@ -33,9 +32,6 @@ export default class ApiClient {
   // it can be public api endpoint
   public getSalons() {
     // return this.http.get()
-    return new Promise((resolve, reject) => {
-      return resolve(data)
-    })
   }
 
 }

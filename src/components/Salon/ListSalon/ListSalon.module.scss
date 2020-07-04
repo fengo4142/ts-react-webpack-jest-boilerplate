@@ -1,32 +1,7 @@
 @import "../../../styles/variables";
 
 .root {
-  background-color: $white;
-  .header {
-    padding-top: 20px;
-    line-height: 44px;
-    display: flex;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.9);
-
-    .title {
-      margin: 0 auto;
-      font-size: 22px;
-      color: $dark;
-      letter-spacing: -0.13px;
-    }
-    
-    .control {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding-bottom: 12px;
-      .svg {
-        margin: 0 15px;
-      }
-    }    
-  }
+  background-color: $white;  
 
   .filter {
     display: flex;
@@ -35,6 +10,9 @@
     padding: 16px 15px;
     border-top: solid 0.5px $primary;
     border-bottom: solid 0.5px $primary;
+    top: 64px;
+    position: relative;
+    margin-bottom: 64px;
   }
 
   .content {
