@@ -1,15 +1,16 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
-import styles from './MobileLayout.module.scss';
+import styles from './MainLayout.module.scss';
 
-const MobileLayout: FC = (props) => {
+const MainLayout: FC = (props) => {
+  console.log(styles)
   return (
     <div className={styles.root}>
       <div className={styles.header}>
         <div className={styles.headerLine} />
-        <div className={styles.logoWrapper}>
-          LOGO
+        <div className={styles.backWrapper}>
+          <span className={styles.back}>Back</span>
         </div>
       </div>
 
@@ -18,7 +19,7 @@ const MobileLayout: FC = (props) => {
       <div className={styles.footer}>
         <div className={styles.footerContent}>
           <div className={styles.footerRow}>
-            <span className={styles.footerItem}>© Copyright {new Date().getFullYear()} MedZoomer</span>
+            <span className={styles.footerItem}>© Copyright {new Date().getFullYear()} Cloud Nine</span>
           </div>
           <div className={styles.footerRow}>
             <Link to={'/policy'} className={classNames(styles.footerLink, styles.leftFooterLink)}>
@@ -34,4 +35,4 @@ const MobileLayout: FC = (props) => {
   );
 };
 
-export default MobileLayout;
+export default MainLayout;

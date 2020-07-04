@@ -1,0 +1,98 @@
+$font-family: "Proxima Nova";
+
+// colors
+$white: #fff;
+$black: #000;
+$green: #4cc71d;
+$blue: #006cf0;
+$red: #ff7272;
+$mainBg: #ffffff; 
+$mainRed: #e21c40;
+$secondaryRed: #ca1c3c;
+$avatarInitials: #e60f39;
+
+$primary: $mainRed;
+$secondary: $blue;
+$error: $red;
+
+$greyBorder : #d8d8d8;
+$lightGreyBorder: rgba(255, 255, 255, 0.1);
+$inputBorder: #d2d3d5;
+$cardBorder: #e2e2e2;
+$border: rgba(0, 0, 0, 0.14);
+$blueBg: #0092a8;
+$greyBg: #f3f4f7;
+$menuBg: #1c2127;
+$photoBg: #edf0f2;
+$searchBg: #e3e4e8;
+$activeMenuBg: rgba(226, 28, 64, 0.6);
+$greyLightBg: #f7f8fa;
+$greenSuccess: #83e363;
+$orangeErrors: #ffcb72;
+$blueProcessing: #72ccff;
+
+$greyFont: #999999;
+$secondGreyFont: #536270;
+$middleGreyFont: #798c9e;
+$lightGreyFont: #a4a6aa;
+$lightBlueFont: #e6f4f6;
+$menuGreyFront: #b0c5d9;
+$subtitleFont: rgba(0, 0, 0, 0.87);
+
+//font sizes
+$mainFont: 15px;
+$secondaryFont: 16px;
+$tableFont: 13px;
+$menuFont: 15px;
+$titleFont: 20px;
+$subTitle: 18px;
+$largeTitle: 42px;
+
+// size unit for retina sprites
+$size: 1px;
+
+// mixins
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+// Small devices
+@mixin xs {
+  @media (max-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+// Medium devices
+@mixin sm {
+  @media (max-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+// Large devices
+@mixin md {
+  @media (max-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin lg {
+  @media (max-width: #{$screen-xl-min}) {
+    @content;
+  }
+}

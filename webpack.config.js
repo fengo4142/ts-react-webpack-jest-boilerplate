@@ -47,17 +47,35 @@ module.exports = {
         }
       },
       {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          isDevMode ? "style-loader" : MiniCssExtractPlugin.loader,
+        test: /\.module\.s(a|c)ss$/,
+        loader: [
+          isDevMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
-              url: true
+              modules: true,
+              sourceMap: isDevMode
             }
           },
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
+            options: {
+              sourceMap: isDevMode
+            }
+          }
+        ]
+      },
+      {
+        test: /\.s(a|c)ss$/,
+        exclude: /\.module.(s(a|c)ss)$/,
+        loader: [
+          isDevMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: isDevMode
+            }
           }
         ]
       },
@@ -70,7 +88,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js', '.scss']
   },
   optimization: {
     minimizer: [new UglifyJsPlugin()],
