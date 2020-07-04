@@ -7,7 +7,7 @@ const APP_DIR = path.resolve(__dirname, './src');
 const PUBLIC_DIR = path.resolve(__dirname, './public');
 const BUILD_DIR = path.resolve(__dirname, './dist');
 
-const isDevMode = process.env.NODE_ENV === 'development'
+const isDevMode = process.env.NODE_ENV !== 'production'
 
 module.exports = {
   mode: isDevMode ? 'development' : 'production',
@@ -18,15 +18,15 @@ module.exports = {
     warnings: false
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: 'bundle.js',
     path: BUILD_DIR,
     publicPath: '/'
   },
   devtool: 'inline-source-map',
   devServer: {
     compress: true,
-    historyApiFallback: true
-    // contentBase: BUILD_DIR,
+    historyApiFallback: true,
+    contentBase: BUILD_DIR,
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -80,7 +80,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(jpg|png|svg)$/,
+        test: /\.(jpg|png|svg|json)$/,
         use: {
           loader: 'file-loader',
         },

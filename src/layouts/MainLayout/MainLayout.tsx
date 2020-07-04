@@ -4,13 +4,13 @@ import classNames from 'classnames';
 import styles from './MainLayout.module.scss';
 
 const MainLayout: FC = (props) => {
-  console.log(styles)
+
   return (
     <div className={styles.root}>
       <div className={styles.header}>
         <div className={styles.headerLine} />
-        <div className={styles.backWrapper}>
-          <span className={styles.back}>Back</span>
+        <div className={styles.logoWrapper}>
+          <span className={styles.logo}>Salon</span>
         </div>
       </div>
 

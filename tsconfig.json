@@ -20,6 +20,6 @@
     "outDir": "./dist/"
   },
   "include": [
-    "src"
+    "src", "test/components/App.test.ts"
   ]
 }

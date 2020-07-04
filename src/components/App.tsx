@@ -1,15 +1,19 @@
 import React, { FC } from 'react';
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import { Router } from 'react-router';
+import { Redirect, Route, Switch } from 'react-router-dom';
+import { createBrowserHistory } from 'history'
 
+import { AppRouteProps } from '../interfaces';
 import MainLayout from '../layouts/MainLayout';
 import Salon from '../components/Salon';
-import { AppRouteProps } from '../interfaces';
 
 import './App.scss';
 
 function dummyLayout(props: any) {
   return props.children;
 }
+
+const history = createBrowserHistory()
 
 // HERE you can customized for differnet routes like private route and public one
 const AppRoute: FC<AppRouteProps> = (props: any) => {
@@ -28,9 +32,9 @@ const AppRoute: FC<AppRouteProps> = (props: any) => {
 
 const App: FC = () => {
   return (
-    <Router>
+    <Router history={history}>
       <Switch>
-        <AppRoute exact path="/salon" component={Salon} layout={MainLayout} />
+        <AppRoute path="/salon" component={Salon} layout={MainLayout} />
         <Redirect exact path="/*" to={'/salon'} />
       </Switch>
     </Router>
