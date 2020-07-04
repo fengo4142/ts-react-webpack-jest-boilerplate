@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import CustomLayout from '../layouts/MobileLayout';
 import './App.scss';
 
-function App() {
+const App: FC = () => {
   return (
-    <div className="App">
-      sdfsdf
-    </div>
+      <Router>
+        <Switch>
+          {/* <Route exact path="/list" component={ListSalon} />         
+          <CustomLayout>
+              <Route exact path="/detail" component={DetailSalon} />
+          </CustomLayout> */}
+        </Switch>
+    </Router>
   );
 }
 
