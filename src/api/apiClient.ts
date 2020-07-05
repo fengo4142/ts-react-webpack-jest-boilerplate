@@ -4,7 +4,7 @@ import ApiError from './apiError';
 import { HttpInterface } from './httpAdapter';
 import { fromEvent, Observable } from 'rxjs';
 import { salons } from '../constants';
-
+import { ISalon } from '../interfaces'
 type ApiClientEvents = 'unauthorized' | string;
 
 export default class ApiClient {
@@ -31,9 +31,18 @@ export default class ApiClient {
   }
 
   // it can be public api endpoint
-  public getSalons() {
+  public getSalons(data: any) {
+    const { priceFilter } = data
+    return priceFilter.length ? salons.reduce((acc: any, item: any) => {
+      for (const filter of priceFilter) {
+        if (item.price > filter.start && item.price < filter.end) {
+          acc.push(item)
+          return acc;
+        }
+      }
+    }, []) : salons;
     // return this.http.get()
-    return salons;
+    // return salons;
   }
 
   public getSalon(id: any) {

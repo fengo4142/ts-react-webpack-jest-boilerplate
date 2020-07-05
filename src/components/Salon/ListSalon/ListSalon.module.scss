@@ -4,17 +4,24 @@
   background-color: $white;  
 
   .filter {
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: space-between;
-    padding: 16px 15px;
-    border-top: solid 0.5px $primary;
-    border-bottom: solid 0.5px $primary;
+
+    .control {
+      cursor: pointer;
+    }
+  }
+  .panel {
+    display: flex;
     top: 64px;
     position: relative;
     margin-bottom: 64px;
+    line-height: 40px;
+    border-top: solid 0.5px $primary;
+    border-bottom: solid 0.5px $primary;
+    width: 100%;
   }
-
   .content {
     display: flex;
     flex-direction: column;
@@ -62,7 +69,7 @@
         display: flex;
         flex-direction: column;
         padding: 24px 0 0 0;
-        .distance {
+        .price {
           font-size: $mainFont;
           text-align: right;
           color: $dark;

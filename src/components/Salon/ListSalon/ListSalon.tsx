@@ -8,10 +8,11 @@ import ArrowDownSmall from '../../../assets/arrow-down-small.svg';
 import ArrowRightExtraSmall from '../../../assets/arrow-right-extra-small.svg';
 import Rating from '../../common/Rating';
 import Header from '../../common/Header';
+import PriceSelect from '../../common/PriceSelect';
 import { ISalon } from '../../../interfaces';
 
 import styles from './ListSalon.module.scss';
-
+import { priceOptions } from '../../../constants';
 
 export const ListSalon: FC = () => {
 
@@ -20,39 +21,44 @@ export const ListSalon: FC = () => {
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [data, setData] = useState<ISalon[] | null | undefined>(null)
-
+  const [priceFilter, setPriceFilter] = useState([])
   // may need pagination or filter, but right now just demo data
   useEffect(() => {
     getSalonList().catch()
-  }, [])
+  }, [priceFilter])
 
   const getSalonList = useCallback(async () => {
     setIsLoading(true);
     try {
-      const salons = await api.getSalons();
+      const salons = await api.getSalons({ priceFilter });
       setData(salons);
       setIsLoading(false);
     } catch (err) {
       console.log(err);
       setIsLoading(false);
     }
-  }, [])
+  }, [priceFilter])
 
-  const viewDetailHandler = (id: any) => {
+  const onViewDetailHandler = (id: any) => {
     history.push(`${path}/${id}`)
   }
 
   return (
     <div className={styles.root}>
 
-      <Header title="Hår" sideIcon={filter} backIcon={ArrowLeftSmall} />
-      <div className={styles.filter}>
-        <div className={styles.criteria}>
-          pris 250 - 500
-        </div>
-        <div className={styles.control}>
-          <img src={ArrowDownSmall} />
-        </div>
+      <Header title="Hår" sideIcon={filter} backIcon={ArrowLeftSmall} />     
+      <div className={styles.panel}>
+        <PriceSelect
+          multi={true}
+          clearable={false}
+          searchable={true}
+          isLoading={isLoading}
+          options={priceOptions}
+          filterValues={priceFilter}
+          labelField={"label"}
+          valueField={"id"}
+          onChange={values => setPriceFilter(values)}
+        />
       </div>
       <div className={styles.content}>
         {data && data.map((item: any) => {
@@ -68,10 +74,10 @@ export const ListSalon: FC = () => {
                 <div className={styles.desc}>{item.address}</div>
               </div>
               <div className={styles.numbers}>
-                <div className={styles.distance}>{item.distance} kr</div>
+                <div className={styles.price}>{item.price} kr</div>
                 <div className={styles.time}>{item.time} min</div>
               </div>
-              <div className={styles.viewMore} onClick={e => viewDetailHandler(item.id)}>
+              <div className={styles.viewMore} onClick={e => onViewDetailHandler(item.id)}>
                 <img src={ArrowRightExtraSmall} />
               </div>
             </div>

@@ -4,7 +4,7 @@ export interface ISalon {
     rate: number;
     score: number;
     address: string;
-    distance: number;
+    price: number;
     time: number;
     date: string;
 }
