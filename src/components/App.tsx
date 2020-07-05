@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
-import { Router } from 'react-router';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 
-import { history } from '../utils';
 import { AppRouteProps } from '../interfaces';
 import MainLayout from '../layouts/MainLayout';
 import Salon from '../components/Salon';
@@ -31,7 +29,7 @@ const AppRoute: FC<AppRouteProps> = (props: any) => {
 
 const App: FC = () => {
   return (
-    <Router history={history}>
+    <Router>
       <Switch>
         <AppRoute path="/salon" component={Salon} layout={MainLayout} />
         <Redirect exact path="/*" to={'/salon'} />

@@ -44,16 +44,11 @@
 
           span {
             font-size: 11px;
-            font-weight: 300;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: normal;
             letter-spacing: -0.07px;
             text-align: right;
             color: #656565;
             padding: 0 4.1px;
           }
-
         }
         .desc {
           font-family: HelveticaNeue;
@@ -84,6 +79,7 @@
       .viewMore {
         width: 14.5%;
         display: flex;
+        cursor: pointer;
         flex-direction: column;
         justify-content: center;
         text-align: center;

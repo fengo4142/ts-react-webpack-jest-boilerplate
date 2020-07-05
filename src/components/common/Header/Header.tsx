@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import classNames from 'classnames';
-
-import { history } from '../../../utils';
+import { useHistory } from 'react-router';
 
 import styles from './Header.module.scss';
 
@@ -13,6 +12,7 @@ interface IHeaderProps {
 
 export const Header: FC<IHeaderProps> = (props) => {
   const { title, sideIcon, backIcon } = props;
+  const history = useHistory();
 
   return (
     <div className={title ? styles.header : classNames(styles.header, styles.small)}>

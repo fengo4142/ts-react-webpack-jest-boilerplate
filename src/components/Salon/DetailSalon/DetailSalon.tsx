@@ -1,19 +1,44 @@
-import React, { FC } from 'react';
-import classNames from 'classnames';
+import React, { FC, useCallback, useState, useEffect } from 'react';
+import { useRouteMatch } from 'react-router';
 
+import api from '../../../api';
 import heart from '../../../assets/heart.svg';
 import ArrowLeft from '../../../assets/arrow-left.svg';
 import Globe from '../../../assets/globe.svg';
 import Clock from '../../../assets/clock.svg';
 import Phone from '../../../assets/phone.svg';
 import Pin from '../../../assets/pin.svg';
-
 import Header from '../../common/Header';
 import Rating from '../../common/Rating';
+import { ISalon } from '../../../interfaces';
 
 import styles from './DetailSalon.module.scss';
 
-export const DetailSalon: FC = (props) => {
+
+export const DetailSalon: FC = () => {
+  
+  const {
+    params: { id }
+  } = useRouteMatch();
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState<ISalon | undefined | null>(null)
+
+  useEffect(() => {
+    getSalonById().catch()
+  }, [])
+
+  const getSalonById = useCallback(async () => {
+    setIsLoading(true);
+    try {
+      const salon: ISalon | undefined | null = await api.getSalon(id)
+      setData(salon)
+      setIsLoading(false)
+    } catch (err) {
+      console.log(err)
+      setIsLoading(false)
+    }
+  }, [id])
 
   return (
     <div className={styles.root}>

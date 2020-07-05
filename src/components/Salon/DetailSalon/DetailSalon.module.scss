@@ -12,19 +12,20 @@
     background-size: contain;
 
     @include sm {
-      background-image: url('../../../assets/image.png');
+      background-image: url('../../../assets/item_hero/image.png');
     }
     @include lg {
-      background-image: url('../../../assets/image@2x.png');
+      background-image: url('../../../assets/item_hero/image@2x.png');
     }
     @include xl {
-      background-image: url('../../../assets/image@3x.png');
+      background-image: url('../../../assets/item_hero/image@3x.png');
     }
 
     .mainInfo {
       position: absolute;
       bottom: 24px;
       padding: 0 15px;
+      
       .title {
         font-family: MillerBanner-Light;
         font-size: 22px;

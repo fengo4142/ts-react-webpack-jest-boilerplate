@@ -1,9 +1,4 @@
-import { createBrowserHistory } from 'history'
-
 import { ErrorInterface } from '../interfaces';
-
-
-export const history = createBrowserHistory();
 
 export const decodeErrors = (errors: ErrorInterface[]) => {
   return Array.from(errors || []).reduce((res: object, e: ErrorInterface) => {
