@@ -3,6 +3,7 @@
 .root {
   background-color: $white;
   height: 100%;
+
   .hero {
     width: 100%;
     padding-bottom: 66.7%;
@@ -12,13 +13,13 @@
     background-size: contain;
 
     @include sm {
-      background-image: url('../../../assets/item_hero/image.png');
+      background-image: url('../../../assets/images/item_hero/image.png');
     }
     @include lg {
-      background-image: url('../../../assets/item_hero/image@2x.png');
+      background-image: url('../../../assets/images/item_hero/image@2x.png');
     }
     @include xl {
-      background-image: url('../../../assets/item_hero/image@3x.png');
+      background-image: url('../../../assets/images/item_hero/image@3x.png');
     }
 
     .mainInfo {
@@ -27,7 +28,7 @@
       padding: 0 15px;
       
       .title {
-        font-family: MillerBanner-Light;
+        font-family: $primaryFontFamily;
         font-size: 22px;
         letter-spacing: -0.15px;
         color: $white;
@@ -37,7 +38,7 @@
         display: flex;
 
         span {
-          font-style: HelveticaNeue-Light;
+          font-family: $secondaryFontFamily;
           font-size: 13px;
           letter-spacing: -0.07px;
           text-align: right;
@@ -59,6 +60,7 @@
       line-height: 50px;
       span {
         width: 50%;
+        font-family: "HelveticaNeue";
         font-size: $mainFont;
         color: $dark;
         text-align: center;
@@ -76,6 +78,7 @@
       .item {
         display: flex;
         padding: 13px 0;
+        font-family: $secondaryFontFamily;
         font-size: $mainFont;
         color: $dark;
       }

@@ -80,11 +80,14 @@ module.exports = {
         ]
       },
       {
-        test: /\.(jpg|png|svg|json)$/,
+        test: /\.(jpg|png|svg|json|ttf)$/,
         use: {
           loader: 'file-loader',
+          options: {
+            url: false
+          }
         },
-      },
+      }
     ]
   },
   resolve: {

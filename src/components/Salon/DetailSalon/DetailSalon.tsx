@@ -2,12 +2,12 @@ import React, { FC, useCallback, useState, useEffect } from 'react';
 import { useRouteMatch } from 'react-router';
 
 import api from '../../../api';
-import heart from '../../../assets/heart.svg';
-import ArrowLeft from '../../../assets/arrow-left.svg';
-import Globe from '../../../assets/globe.svg';
-import Clock from '../../../assets/clock.svg';
-import Phone from '../../../assets/phone.svg';
-import Pin from '../../../assets/pin.svg';
+import heart from '../../../assets/images/heart.svg';
+import ArrowLeft from '../../../assets/images/arrow-left.svg';
+import Globe from '../../../assets/images/globe.svg';
+import Clock from '../../../assets/images/clock.svg';
+import Phone from '../../../assets/images/phone.svg';
+import Pin from '../../../assets/images/pin.svg';
 import Header from '../../common/Header';
 import Rating from '../../common/Rating';
 import { ISalon } from '../../../interfaces';

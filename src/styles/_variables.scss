@@ -1,7 +1,30 @@
-$font-family: "Proxima Nova";
+@font-face {
+  font-family: 'HelveticaNeue';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url('/assets/fonts/HelveticaNeue/HelveticaNeueLTW1G-Lt.ttf') format('ttf')
+}
+@font-face {
+  font-family: 'HelveticaNeue-Light';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url('/assets/fonts/HelveticaNeue/helvetica-neue-light.ttf') format('ttf')
+}
+@font-face {
+  font-family: 'MillerBanner-Light';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url('/assets/fonts/MillerBanner/Miller-Banner-Light-01.woff2') format('ttf')
+
+}
+
+$primaryFontFamily: "MillerBanner-Light";
+$secondaryFontFamily: "HelveticaNeue-Light";
 
 // colors
-
 $white: #fff;
 $black: #000;
 $green: #4cc71d;
@@ -11,35 +34,10 @@ $mainBg: #ffffff;
 $dark: #202020;
 $lightDark: #666666;
 $mainBrown: #b69f58;
-$avatarInitials: #e60f39;
 
 $primary: $mainBrown;
 $secondary: $blue;
 $error: $red;
-
-$greyBorder : #d8d8d8;
-$lightGreyBorder: rgba(255, 255, 255, 0.1);
-$inputBorder: #d2d3d5;
-$cardBorder: #e2e2e2;
-$border: rgba(0, 0, 0, 0.14);
-$blueBg: #0092a8;
-$greyBg: #f3f4f7;
-$menuBg: #1c2127;
-$photoBg: #edf0f2;
-$searchBg: #e3e4e8;
-$activeMenuBg: rgba(226, 28, 64, 0.6);
-$greyLightBg: #f7f8fa;
-$greenSuccess: #83e363;
-$orangeErrors: #ffcb72;
-$blueProcessing: #72ccff;
-
-$greyFont: #999999;
-$secondGreyFont: #536270;
-$middleGreyFont: #798c9e;
-$lightGreyFont: #a4a6aa;
-$lightBlueFont: #e6f4f6;
-$menuGreyFront: #b0c5d9;
-$subtitleFont: rgba(0, 0, 0, 0.87);
 
 //font sizes
 $mainFont: 15px;
@@ -49,9 +47,6 @@ $menuFont: 15px;
 $titleFont: 20px;
 $subTitle: 18px;
 $largeTitle: 42px;
-
-// size unit for retina sprites
-$size: 1px;
 
 // mixins
 @mixin border-radius($radius) {

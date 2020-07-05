@@ -29,6 +29,7 @@
       display: flex;
       flex-direction: row;
       .date {
+        font-family: "HelveticaNeue";
         font-size: $mainFont;
         color: $dark;
         width: 18%;
@@ -42,6 +43,7 @@
         display: flex;
         flex-direction: column;
         .title {
+          font-family: $primaryFontFamily;
           font-size: 20px;
           color: $dark;
         }
@@ -50,6 +52,7 @@
           display: flex;
 
           span {
+            font-family: $secondaryFontFamily;
             font-size: 11px;
             letter-spacing: -0.07px;
             text-align: right;
@@ -58,7 +61,7 @@
           }
         }
         .desc {
-          font-family: HelveticaNeue;
+          font-family: $secondaryFontFamily;
           font-size: $mainFont;
           color: $lightDark;
         }
@@ -70,12 +73,14 @@
         flex-direction: column;
         padding: 24px 0 0 0;
         .price {
+          font-family: "HelveticaNeue";
           font-size: $mainFont;
           text-align: right;
           color: $dark;
         }
 
         .time {
+          font-family: $secondaryFontFamily;
           font-size: 13px;
           text-align: right;
           color: $lightDark;

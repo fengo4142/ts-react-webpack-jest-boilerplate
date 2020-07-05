@@ -2,10 +2,9 @@ import React, { FC, useCallback, useState, useEffect } from 'react';
 import { useHistory, useRouteMatch } from 'react-router';
 
 import api from '../../../api';
-import filter from '../../../assets/filter.svg';
-import ArrowLeftSmall from '../../../assets/arrow-left-small.svg';
-import ArrowDownSmall from '../../../assets/arrow-down-small.svg';
-import ArrowRightExtraSmall from '../../../assets/arrow-right-extra-small.svg';
+import filter from '../../../assets/images/filter.svg';
+import ArrowLeftSmall from '../../../assets/images/arrow-left-small.svg';
+import ArrowRightExtraSmall from '../../../assets/images/arrow-right-extra-small.svg';
 import Rating from '../../common/Rating';
 import Header from '../../common/Header';
 import PriceSelect from '../../common/PriceSelect';
