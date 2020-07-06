@@ -10,21 +10,31 @@ interface IHeaderProps {
   title?: string;
 }
 
-export const Header: FC<IHeaderProps> = (props) => {
+export const Header: FC<IHeaderProps> = (props: IHeaderProps) => {
   const { title, sideIcon, backIcon } = props;
   const history = useHistory();
 
   return (
-    <div className={title ? styles.header : classNames(styles.header, styles.small)}>
-      <div className={styles.control} onClick={e => history.go(-1)}>
-        <img className={title ? styles.svg : classNames(styles.svg, styles.packed)} src={backIcon} />
+    <div
+      className={
+        title ? styles.header : classNames(styles.header, styles.small)
+      }
+    >
+      <div className={styles.control} onClick={() => history.go(-1)}>
+        <img
+          className={title ? styles.svg : classNames(styles.svg, styles.packed)}
+          src={backIcon}
+        />
       </div>
       <div className={styles.title}>
         <span>{title}</span>
       </div>
       <div className={styles.control}>
-        <img className={title ? styles.svg : classNames(styles.svg, styles.packed)} src={sideIcon} />
+        <img
+          className={title ? styles.svg : classNames(styles.svg, styles.packed)}
+          src={sideIcon}
+        />
       </div>
     </div>
-  )
-}
+  );
+};

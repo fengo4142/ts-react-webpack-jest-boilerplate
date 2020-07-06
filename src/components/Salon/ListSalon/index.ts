@@ -1,3 +1,3 @@
 import { ListSalon } from './ListSalon';
 
-export default ListSalon
+export default ListSalon;

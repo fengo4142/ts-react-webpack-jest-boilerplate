@@ -14,17 +14,16 @@ import styles from './ListSalon.module.scss';
 import { priceOptions } from '../../../constants';
 
 export const ListSalon: FC = () => {
-
   const { path } = useRouteMatch();
   const history = useHistory();
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [data, setData] = useState<ISalon[] | null | undefined>(null)
-  const [priceFilter, setPriceFilter] = useState([])
+  const [data, setData] = useState<ISalon[] | null | undefined>(null);
+  const [priceFilter, setPriceFilter] = useState([]);
   // may need pagination or filter, but right now just demo data
   useEffect(() => {
-    getSalonList().catch()
-  }, [priceFilter])
+    getSalonList().catch();
+  }, [priceFilter]);
 
   const getSalonList = useCallback(async () => {
     setIsLoading(true);
@@ -33,19 +32,18 @@ export const ListSalon: FC = () => {
       setData(salons);
       setIsLoading(false);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       setIsLoading(false);
     }
-  }, [priceFilter])
+  }, [priceFilter]);
 
   const onViewDetailHandler = (id: any) => {
-    history.push(`${path}/${id}`)
-  }
+    history.push(`${path}/${id}`);
+  };
 
   return (
     <div className={styles.root}>
-
-      <Header title="Hår" sideIcon={filter} backIcon={ArrowLeftSmall} />     
+      <Header title="Hår" sideIcon={filter} backIcon={ArrowLeftSmall} />
       <div className={styles.panel}>
         <PriceSelect
           multi={true}
@@ -54,35 +52,39 @@ export const ListSalon: FC = () => {
           isLoading={isLoading}
           options={priceOptions}
           filterValues={priceFilter}
-          labelField={"label"}
-          valueField={"id"}
-          onChange={values => setPriceFilter(values)}
+          labelField={'label'}
+          valueField={'id'}
+          onChange={(values) => setPriceFilter(values)}
         />
       </div>
       <div className={styles.content}>
-        {data && data.map((item: any) => {
-          return( 
-            <div key={item.id} className={styles.card}>
-              <div className={styles.date}>{item.date}</div>
-              <div className={styles.mainInfo}>
-                <div className={styles.title}>{item.title}</div>
-                <div className={styles.rate}>
-                  <Rating rate={item.rate} isSmall={true} />
-                  <span>({item.score})</span>
+        {data &&
+          data.map((item: any) => {
+            return (
+              <div key={item.id} className={styles.card}>
+                <div className={styles.date}>{item.date}</div>
+                <div className={styles.mainInfo}>
+                  <div className={styles.title}>{item.title}</div>
+                  <div className={styles.rate}>
+                    <Rating rate={item.rate} isSmall={true} />
+                    <span>({item.score})</span>
+                  </div>
+                  <div className={styles.desc}>{item.address}</div>
                 </div>
-                <div className={styles.desc}>{item.address}</div>
+                <div className={styles.numbers}>
+                  <div className={styles.price}>{item.price} kr</div>
+                  <div className={styles.time}>{item.time} min</div>
+                </div>
+                <div
+                  className={styles.viewMore}
+                  onClick={() => onViewDetailHandler(item.id)}
+                >
+                  <img src={ArrowRightExtraSmall} />
+                </div>
               </div>
-              <div className={styles.numbers}>
-                <div className={styles.price}>{item.price} kr</div>
-                <div className={styles.time}>{item.time} min</div>
-              </div>
-              <div className={styles.viewMore} onClick={e => onViewDetailHandler(item.id)}>
-                <img src={ArrowRightExtraSmall} />
-              </div>
-            </div>
-          )
-        })}
+            );
+          })}
       </div>
     </div>
-  )
-}
+  );
+};

@@ -1,10 +1,14 @@
 import React, { FC } from 'react';
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from 'react-router-dom';
 
 import { AppRouteProps } from '../interfaces';
 import MainLayout from '../layouts/MainLayout';
 import Salon from '../components/Salon';
-
 
 import './App.scss';
 
@@ -21,7 +25,11 @@ const AppRoute: FC<AppRouteProps> = (props: any) => {
       {...rest}
       render={() => {
         const Layout = layout ? layout : dummyLayout;
-        return (<Layout>{component ? React.createElement(component) : children}</Layout>)
+        return (
+          <Layout>
+            {component ? React.createElement(component) : children}
+          </Layout>
+        );
       }}
     />
   );
@@ -36,6 +44,6 @@ const App: FC = () => {
       </Switch>
     </Router>
   );
-}
+};
 
 export default App;

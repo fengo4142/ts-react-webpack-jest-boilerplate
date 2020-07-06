@@ -6,6 +6,7 @@
       "dom.iterable",
       "esnext"
     ],
+    "isolatedModules": false,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -15,11 +16,10 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "jsx": "react",
     "outDir": "./dist/"
   },
   "include": [
-    "src", "test/components/App.test.ts"
+    "src", "test"
   ]
 }

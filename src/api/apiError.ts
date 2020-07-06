@@ -2,21 +2,25 @@ import { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
 export const API_ERROR_CODES = {
   NOT_FOUND: 404,
-  UNAUTHORIZED: 401
+  UNAUTHORIZED: 401,
 };
 
 export default class ApiError<T = any> extends Error {
-  public name: string = 'ApiError';
+  public name = 'ApiError';
 
   public constructor(protected originalError: AxiosError<T>, path: string) {
     super(`${originalError.message} (${path})`);
   }
 
   protected isResponseStatus(status: number): boolean {
-    return Boolean(this.originalError && this.originalError.response && this.originalError.response.status === status);
+    return Boolean(
+      this.originalError &&
+        this.originalError.response &&
+        this.originalError.response.status === status
+    );
   }
 
-  get isApiError() {
+  get isApiError(): boolean {
     return true;
   }
 
