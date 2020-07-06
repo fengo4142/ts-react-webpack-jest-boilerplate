@@ -4,17 +4,15 @@
   padding-top: 20px;
   line-height: 44px;
   display: flex;
-  background: transparent;
-  position: absolute;
+  background-color: $lightDark;
   width: 100%;
-    max-width: 375px;
-    margin: 0 auto;
+  margin: 0 auto;
 
   .title {
     margin: 0 auto;
     font-family: $primaryFontFamily;
     font-size: 22px;
-    color: $dark;
+    color: $white;
     letter-spacing: -0.13px;
   }
   

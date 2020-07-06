@@ -1,25 +1,25 @@
 import { Header } from '../../../src/components/common/Header/Header';
-import { shallow, mount } from "enzyme";
-import * as React from "react";
+import { mount } from 'enzyme';
+import * as React from 'react';
 
-const title = "Salon"
+const title = 'Salon';
 
 describe(`Header Component`, () => {
-	let wrapper: any;
+  let wrapper: any;
 
   beforeEach(() => {
-		wrapper = mount(<Header title={title} backIcon={''} sideIcon={''} />)
-	})
-	
-  afterEach(() => {
-		wrapper.unmount()
-	})
+    wrapper = mount(<Header title={title} backIcon={''} />);
+  });
 
-  it("correctly renders the component without crash", () => {
+  afterEach(() => {
+    wrapper.unmount();
+  });
+
+  it('correctly renders the component without crash', () => {
     expect(wrapper).toHaveLength(1);
   });
 
-  it("renders the title", () => {
+  it('renders the title', () => {
     expect(wrapper.text()).toBe(title);
   });
-})
+});

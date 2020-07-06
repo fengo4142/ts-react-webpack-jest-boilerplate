@@ -3,7 +3,6 @@ import { EventEmitter } from 'events';
 import ApiError from './apiError';
 import { HttpInterface } from './httpAdapter';
 import { fromEvent, Observable } from 'rxjs';
-import { salons } from '../constants';
 
 type ApiClientEvents = 'unauthorized' | string;
 
@@ -29,26 +28,5 @@ export default class ApiClient {
 
   public getHealthCheck(): any {
     return this.http.get('/');
-  }
-
-  // it can be public api endpoint
-  public getSalons(data: any): any {
-    const { priceFilter } = data;
-    return priceFilter.length
-      ? salons.reduce((acc: any, item: any) => {
-          for (const filter of priceFilter) {
-            if (item.price > filter.start && item.price < filter.end) {
-              acc.push(item);
-              break;
-            }
-          }
-          return acc;
-        }, [])
-      : salons;
-    // return this.http.get()
-  }
-
-  public getSalon(id: any): any {
-    return salons.filter((item) => item.id === id).shift();
   }
 }

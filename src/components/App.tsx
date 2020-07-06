@@ -8,7 +8,7 @@ import {
 
 import { AppRouteProps } from '../interfaces';
 import MainLayout from '../layouts/MainLayout';
-import Salon from '../components/Salon';
+import Dashboard from './Dashboard';
 
 import './App.scss';
 
@@ -39,8 +39,8 @@ const App: FC = () => {
   return (
     <Router>
       <Switch>
-        <AppRoute path="/salon" component={Salon} layout={MainLayout} />
-        <Redirect exact path="/*" to={'/salon'} />
+        <AppRoute path="/dashboard" component={Dashboard} layout={MainLayout} />
+        <Redirect exact path="/*" to={'/dashboard'} />
       </Switch>
     </Router>
   );

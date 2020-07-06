@@ -1,12 +1,12 @@
-# Salon App
+# 🚀 Boilerplate Template App (React, Webpack, Typescript, Jest)
 
-Mobile view application using React.js, Webpack, Typescript, Jest, Babel, Eslint, SCSS module
+Boiler application using React.js, Webpack, Typescript, Jest, Babel, Eslint, modularized SCSS, Axios
 
 ## Features
 
-- Boilerplate application with modern stacks
-- Price filter with select component on List Page View
-- Hero Image compatible with differnet retina displays on Detail Page View
+- Boilerplate application with custom webpack config
+- Axios http client setup
+- Customizable layout for private, public pages
 - Unit test with jest
 
 ## Prerequisites

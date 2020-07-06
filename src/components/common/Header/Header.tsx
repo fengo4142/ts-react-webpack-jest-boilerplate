@@ -6,12 +6,11 @@ import styles from './Header.module.scss';
 
 interface IHeaderProps {
   backIcon: string;
-  sideIcon: string;
   title?: string;
 }
 
 export const Header: FC<IHeaderProps> = (props: IHeaderProps) => {
-  const { title, sideIcon, backIcon } = props;
+  const { title, backIcon } = props;
   const history = useHistory();
 
   return (
@@ -28,12 +27,6 @@ export const Header: FC<IHeaderProps> = (props: IHeaderProps) => {
       </div>
       <div className={styles.title}>
         <span>{title}</span>
-      </div>
-      <div className={styles.control}>
-        <img
-          className={title ? styles.svg : classNames(styles.svg, styles.packed)}
-          src={sideIcon}
-        />
       </div>
     </div>
   );

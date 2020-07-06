@@ -1,17 +1,23 @@
 {
-  "name": "salon-cloudnine-app",
-  "version": "0.1.0",
+  "name": "react-ts-webpack-jest-scss-eslint-starter",
+  "version": "1.0.0",
   "private": true,
+  "main": "src/index.tsx",
+  "author": "Roland Song",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fengo4142/ts-react-webpack-jest-boilerplate"
+  },
+  "license": "MIT",
   "scripts": {
-    "test": "jest test",
-    "test:watch": "jest test --watch",
-    "test:coverage": "jest test --coverage",
     "clean": "rm -rf dist/*",
-    "compile": "yarn tsc",
     "build": "npm run clean && webpack",
     "start": "npm run clean && webpack-dev-server --open",
     "lint": "eslint ./src",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "test": "jest test",
+    "test:watch": "jest test --watch",
+    "test:coverage": "jest test --coverage"
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.7.4",
@@ -90,6 +96,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": "12.14.x",
+    "npm": "^6.13.4"
   },
   "husky": {
     "hooks": {

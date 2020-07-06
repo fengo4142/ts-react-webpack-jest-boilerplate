@@ -9,7 +9,7 @@ const MainLayout: FC = (props: any) => {
       <div className={styles.header}>
         <div className={styles.headerLine} />
         <div className={styles.logoWrapper}>
-          <span className={styles.logo}>Salon</span>
+          <span className={styles.logo}>Your Own Logo Here</span>
         </div>
       </div>
 
@@ -19,7 +19,7 @@ const MainLayout: FC = (props: any) => {
         <div className={styles.footerContent}>
           <div className={styles.footerRow}>
             <span className={styles.footerItem}>
-              © Copyright {new Date().getFullYear()} Cloud Nine
+              © Copyright {new Date().getFullYear()} Your Company
             </span>
           </div>
           <div className={styles.footerRow}>
