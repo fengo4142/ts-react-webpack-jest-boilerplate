@@ -12,6 +12,7 @@ import { ISalon } from '../../../interfaces';
 
 import styles from './ListSalon.module.scss';
 import { priceOptions } from '../../../constants';
+import { IPriceOption } from '../../common/PriceSelect/PriceSelect';
 
 export const ListSalon: FC = () => {
   const { path } = useRouteMatch();
@@ -19,7 +20,9 @@ export const ListSalon: FC = () => {
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [data, setData] = useState<ISalon[] | null | undefined>(null);
-  const [priceFilter, setPriceFilter] = useState([]);
+  const [priceFilter, setPriceFilter] = useState<IPriceOption[]>([
+    priceOptions[1],
+  ]);
   // may need pagination or filter, but right now just demo data
   useEffect(() => {
     getSalonList().catch();

@@ -17,7 +17,7 @@ Mobile view application using React.js, Webpack, Typescript, Jest, Babel, Eslint
 - [Webpack](https://webpack.js.org/) v4.41.2
 - [Jest](https://jestjs.io/) v26.1.0
 - [Babel](https://babeljs.io/) v7.7
-- [Eslint](https://eslint.org/) v6.6.0
+- [Eslint](https://eslint.org/) v7.4.0
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), but customized by its own webpack configuration.
 

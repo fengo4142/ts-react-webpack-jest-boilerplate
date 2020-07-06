@@ -59,6 +59,7 @@
       width: 100%;
       line-height: 50px;
       span {
+        cursor: pointer;
         width: 50%;
         font-family: "HelveticaNeue";
         font-size: $mainFont;
@@ -81,6 +82,10 @@
         font-family: $secondaryFontFamily;
         font-size: $mainFont;
         color: $dark;
+        .downArrow {
+          cursor: pointer;
+          margin: 0 15px;
+        }
       }
       .description {
         font-size: $mainFont;

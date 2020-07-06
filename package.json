@@ -10,7 +10,7 @@
     "compile": "yarn tsc",
     "build": "npm run clean && webpack",
     "start": "npm run clean && webpack-dev-server --open",
-    "lint": "eslint src/",
+    "lint": "eslint ./src",
     "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
@@ -60,6 +60,7 @@
     "eslint-plugin-react-hooks": "^2.3.0",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^4.2.5",
     "identity-obj-proxy": "^3.0.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
@@ -78,9 +79,6 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -92,5 +90,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:fix",
+      "pre-push": "npm run test"
+    }
   }
 }

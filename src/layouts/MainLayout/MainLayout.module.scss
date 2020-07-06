@@ -10,21 +10,10 @@
   }
   .header {
     display: none;
-    @include sm {
-      display: none;
-    }
+
     .headerLine {
       height: 20px;
       background-color: rgba(255, 255, 255, 0.13);
-    }
-    .backWrapper {
-      align-items: center;
-      justify-content: center;
-      height: 80px;
-      .back {
-        width: 180px;
-        height: 42px;
-      }
     }
   }
   .content {
@@ -45,9 +34,7 @@
     }
   }
   .footer {
-    @include sm {
-      display: none;
-    }
+    display: none;
     height: 81px;
     align-items: center;
     justify-content: center;

@@ -1,9 +1,12 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FC, useCallback, useState, useEffect } from 'react';
 import { useRouteMatch } from 'react-router';
 
 import api from '../../../api';
 import heart from '../../../assets/images/heart.svg';
 import ArrowLeft from '../../../assets/images/arrow-left.svg';
+import ArrowDownSmall from '../../../assets/images/arrow-down-small.svg';
 import Globe from '../../../assets/images/globe.svg';
 import Clock from '../../../assets/images/clock.svg';
 import Phone from '../../../assets/images/phone.svg';
@@ -11,6 +14,7 @@ import Pin from '../../../assets/images/pin.svg';
 import Header from '../../common/Header';
 import Rating from '../../common/Rating';
 import { ISalon } from '../../../interfaces';
+import { detailTabs } from '../../../constants';
 
 import styles from './DetailSalon.module.scss';
 
@@ -21,6 +25,7 @@ export const DetailSalon: FC = () => {
 
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState<ISalon | undefined | null>(null);
+  const [activeTab, setActiveTab] = useState(detailTabs[0]);
 
   useEffect(() => {
     getSalonById().catch();
@@ -52,8 +57,16 @@ export const DetailSalon: FC = () => {
       </div>
       <div className={styles.content}>
         <div className={styles.tab}>
-          <span className={styles.active}>Info</span>
-          <span>Schema</span>
+          {detailTabs &&
+            detailTabs.map((tab: any) => (
+              <span
+                key={tab.id}
+                className={tab.id === activeTab.id ? styles.active : ''}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab.label}
+              </span>
+            ))}
         </div>
         <div className={styles.panel}>
           <div className={styles.item}>
@@ -63,6 +76,7 @@ export const DetailSalon: FC = () => {
           <div className={styles.item}>
             <img className={styles.itemIcon} src={Clock} />
             <span>Öppet till 19:00 idag</span>
+            <img className={styles.downArrow} src={ArrowDownSmall} />
           </div>
           <div className={styles.item}>
             <img className={styles.itemIcon} src={Phone} />

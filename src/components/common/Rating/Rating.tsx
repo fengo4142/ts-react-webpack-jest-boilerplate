@@ -14,8 +14,6 @@ import emptyStarSmall3x from '../../../assets/images/star_empty_small/star@3x.pn
 
 import styles from './Rate.module.scss';
 
-const stars = [1, 1, 1, 1, 1];
-
 interface IRate {
   rate: number;
   isSmall?: boolean;
@@ -26,7 +24,7 @@ export const Rating: FC<IRate> = (props: IRate) => {
 
   return (
     <>
-      {stars.fill(0, rate).map((item: number, index: number) =>
+      {[1, 1, 1, 1, 1].fill(0, rate).map((item: number, index: number) =>
         item !== 0 ? (
           !isSmall ? (
             <img

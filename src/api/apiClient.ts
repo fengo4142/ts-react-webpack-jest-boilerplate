@@ -39,9 +39,10 @@ export default class ApiClient {
           for (const filter of priceFilter) {
             if (item.price > filter.start && item.price < filter.end) {
               acc.push(item);
-              return acc;
+              break;
             }
           }
+          return acc;
         }, [])
       : salons;
     // return this.http.get()

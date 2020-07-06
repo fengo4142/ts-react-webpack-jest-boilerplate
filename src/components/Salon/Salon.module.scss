@@ -1,3 +1,7 @@
+@import "../../styles/variables";
+
 .root {
   height: 100vh;
+  max-width: $defaultMaxWidth;
+  margin: 0 auto;
 }

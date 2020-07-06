@@ -1,6 +1,6 @@
 export const salons = [
   {
-    id: 1,
+    id: '1',
     title: 'Sax & Fön',
     rate: 4,
     score: 32,
@@ -10,7 +10,7 @@ export const salons = [
     date: '12.00',
   },
   {
-    id: 2,
+    id: '2',
     title: 'Hårizont',
     rate: 4,
     score: 32,
@@ -20,7 +20,7 @@ export const salons = [
     date: '12.00',
   },
   {
-    id: 3,
+    id: '3',
     title: 'Hårhuset',
     rate: 4,
     score: 32,
@@ -30,7 +30,7 @@ export const salons = [
     date: '12.00',
   },
   {
-    id: 4,
+    id: '4',
     title: 'Hair & Nu',
     rate: 4,
     score: 32,
@@ -40,7 +40,7 @@ export const salons = [
     date: '12.00',
   },
   {
-    id: 5,
+    id: '5',
     title: 'Hårley Davidson',
     rate: 4,
     score: 32,
@@ -50,12 +50,42 @@ export const salons = [
     date: '12.00',
   },
   {
-    id: 6,
+    id: '6',
     title: 'Harizont',
     rate: 4,
     score: 32,
     address: 'Radmansgatan 46',
     price: 320,
+    time: 30,
+    date: '12.00',
+  },
+  {
+    id: '7',
+    title: 'Harizont 2',
+    rate: 4,
+    score: 32,
+    address: 'Radmansgatan 46',
+    price: 320,
+    time: 30,
+    date: '12.00',
+  },
+  {
+    id: '8',
+    title: 'Harizont 8',
+    rate: 4,
+    score: 32,
+    address: 'Radmansgatan 46',
+    price: 1320,
+    time: 30,
+    date: '12.00',
+  },
+  {
+    id: '9',
+    title: 'Harizont 9',
+    rate: 4,
+    score: 32,
+    address: 'Radmansgatan 46',
+    price: 20,
     time: 30,
     date: '12.00',
   },
@@ -83,5 +113,18 @@ export const priceOptions = [
     label: 'Pris 500+ kr',
     start: 500,
     end: 10000000,
+  },
+];
+
+export const detailTabs = [
+  {
+    id: '1',
+    label: 'Info',
+    active: true,
+  },
+  {
+    id: '2',
+    label: 'Schema',
+    active: false,
   },
 ];
