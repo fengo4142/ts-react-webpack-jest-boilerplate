@@ -1,17 +1,29 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
-orbs:
-  node: circleci/node@1.1.6
+
 jobs:
+  # Declare a dependency on the mapp-orb
   build-and-test:
-    executor:
-      name: node/default
+
+    docker:
+      - image: circleci/node:12
     steps:
       - checkout
-      - node/with-cache:
-          steps:
-            - run: npm install
-            - run: npm test
+      - restore_cache:
+          key: npm-cache-v1-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install dependencies
+          command: npm ci
+      - save_cache:
+          key: npm-cache-v1-{{ checksum "package-lock.json" }}
+          paths:
+              - /home/circleci/.npm
+      - run:
+          name: Run tests
+          command: npm test
+
 workflows:
-    build-and-test:
-      jobs:
-        - build-and-test
+  build-and-tests:
+    # Run the welcome/run job in its own container
+    jobs:
+      - build-and-test
