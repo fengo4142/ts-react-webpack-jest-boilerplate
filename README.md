@@ -19,7 +19,7 @@ Boiler application using React.js, Webpack, Typescript, Jest, Babel, Eslint, mod
 - [Babel](https://babeljs.io/) v7.7
 - [Eslint](https://eslint.org/) v7.4.0
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), but customized by its own webpack configuration.
+It is customized web app by its own webpack configuration.
 
 ## Scripts
 
