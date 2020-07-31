@@ -105,6 +105,7 @@
     "hooks": {
       "pre-commit": "npm run lint:fix",
       "pre-push": "npm run test"
-    }
+    },
+    "postmerge": "(git-branch-is master && npm version minor || (git-branch-is dev && npm --no-git-tag-version version patch)"
   }
 }
