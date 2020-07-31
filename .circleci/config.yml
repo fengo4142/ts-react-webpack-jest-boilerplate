@@ -17,27 +17,36 @@ jobs:
       - run:
           name: Run Tests
           command: npm test
+
   deploy-to-staging:
-    echo 'TO DO - deploy job'
+    docker:
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - run:
+          name: Deploy scripts
+          command: echo 'TO DO - deploy job'
     
 workflows:
-    - build-and-test:
-        filters:
-          tags:
-            only: /.*/
-    - hold:
-        type: approval
-        requires:
-          - build-and-test
-        filters:
-          tags:
-            only: /.*/
-          branches:
-            ignore: 
-              - master
-    - deploy-to-staging:
-        requires:
-          - hold
-        filters:
-          tags:
-            only: /.*/
+  build-tests-deploy:
+    jobs:
+      - build-and-test:
+          filters:
+            tags:
+              only: /.*/
+      - hold:
+          type: approval
+          requires:
+            - build-and-test
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              ignore: 
+                - master
+      - deploy-to-staging:
+          requires:
+            - hold
+          filters:
+            tags:
+                only: /.*/
